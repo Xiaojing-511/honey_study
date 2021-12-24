@@ -1,0 +1,32 @@
+@media screen and (max-width:1024px){
+    #container{
+        margin-top: 0;
+        border-radius: 0;
+    }    
+}
+
+@media screen and (max-width:960px){
+    #container{
+        flex-direction: column;
+    }   
+    #container header{
+        width: 100%;
+    } 
+    #container header #nav-header{
+        margin-top: 0;
+    }
+    #nav-ul{
+        display: flex;
+    }
+    #container header #nav-header span {
+        padding: 16px 24px 16px 0;
+        margin: 0;
+        width: auto;
+    }
+    #container header #nav-header span:hover{
+        background: none;
+    }
+    #container header #nav-header .active::before{
+        display: none;
+    }
+}

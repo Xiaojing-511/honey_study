@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 浏览器样式重置 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    
+    <!-- 引用的第三方iconfont字体库，一般不需要修改 -->
+    <link rel="stylesheet" href="css/font.css" type="text/css" media="all">
+    
+    <!-- 通用样式 -->
+    <link rel="stylesheet/less" href="./css/style.less">
+    
+    <!-- 媒体查询样式表 注意：放在通用样式后面-->
+    <link rel="stylesheet" href="css/media.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/less.js/4.1.1/less.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <img src="./images/indite-logo.png" alt="" width="150px">
+            <p>I can do everything!</p>
+            <nav id="nav-header">
+                <!-- ul样式重置 reset.css -->
+                <ul id="nav-ul"> 
+                    <li class="menu-item active">
+                        <span>Home</span> 
+                    </li>
+                    <li class="menu-item">
+                        <span>Notes</span>
+                    </li>
+                    <li class="menu-item">
+                        <span>Others</span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="sections">
+            <section class="active">
+                <article>
+                    <img src="./images/StockSnap_3VLGQNBZP2-720x405.jpg" alt="">
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderi</p>
+                </article>
+                <article>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderi</p>
+                </article>
+                <article>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderi</p>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <h2>Notes</h2>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderi</p>
+                </article>
+                <article>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderi</p>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <h2>Others</h2>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderi</p>
+                </article>
+               
+            </section>
+        </main>
+    </div>
+    <script>
+        let oNavUl = document.getElementById('nav-ul');
+        let oNavLis = oNavUl.getElementsByTagName('li');
+        let oSection = document.getElementById('sections');
+        let oSectionArr = oSection.getElementsByTagName('section');
+        for (let i = 0; i < oNavLis.length; i++) {
+            oNavLis[i].onclick = function(){
+                for (let j = 0; j < oNavLis.length; j++) {
+                    if(oNavLis[j].classList.value.includes('active')){
+                        oNavLis[j].classList.remove('active')
+                    }
+                    if(oSectionArr[j].classList.value.includes('active')){
+                        oSectionArr[j].classList.remove('active')
+                    }
+                }
+                oNavLis[i].classList.add('active');
+                oSectionArr[i].classList.add('active')
+            }
+        }
+    </script>
+</body>
+</html>
